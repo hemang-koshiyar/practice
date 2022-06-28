@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const Forms = () => {
-  const [error, setError] = useState(null);
+  const [username, setUsername] = useState("");
   const onSubmitAction = (value) => {
     return alert(`Username is : ${value}`);
   };
@@ -10,10 +10,8 @@ const Forms = () => {
     onSubmitAction(event.target.elements.usernameInput.value);
   };
   const handleChange = (event) => {
-    event.preventDefault();
     const { value } = event.target;
-    const isLowerCase = value === value.toLowerCase();
-    setError(isLowerCase ? null : "Username must be in lowercase");
+    setUsername(value.toLowerCase());
   };
   return (
     <React.Fragment>
@@ -23,12 +21,10 @@ const Forms = () => {
           type="text"
           placeholder="Enter username"
           id="usernameInput"
+          value={username}
           onChange={handleChange}
         />
-        <div style={{ color: "red" }}>{error}</div>
-        <button disabled={Boolean(error)} type="submit">
-          Submit
-        </button>
+        <button type="submit">Submit</button>
       </form>
     </React.Fragment>
   );
