@@ -5,7 +5,7 @@ const useFetchUsers = () => {
     (async () => {
       return await fetch("https://jsonplaceholder.typicode.com/users")
         .then((res) => res.json())
-        .then((data) => setUsers(data.slice(0, 40)))
+        .then((data) => setUsers(data))
         .catch((err) => console.log(err));
     })();
   }, []);

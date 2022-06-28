@@ -1,16 +1,18 @@
 import React from "react";
 import "./App.css";
-import CustomHook from "./React_Fundamentals/CustomHook";
 // import CustomComponents from "./React_Fundamentals/CustomComponents";
 // import Styling from "./React_Fundamentals/Styling";
-import Forms from "./React_Fundamentals/Forms";
+// import Forms from "./React_Fundamentals/Forms";
+// import CustomHook from "./React_Hooks/CustomHook";
+import LiftingState from "./React_Hooks/LiftingState";
 const App = () => {
   return (
     <div>
       {/* <CustomComponents /> */}
       {/* <Styling/> */}
       {/* <Forms /> */}
-      <CustomHook />
+      {/* <CustomHook /> */}
+      <LiftingState />
     </div>
   );
 };
