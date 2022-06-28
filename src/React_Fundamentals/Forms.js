@@ -1,7 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Forms = () => {
-  const [username, setUsername] = useState("");
+  // const getInitialValueName = () => {
+  //   return localStorage.getItem("name") || "";
+  // };
+  console.log("rendering...");
+  const [username, setUsername] = useState(
+    () => localStorage.getItem("name") || ""
+  );
+  const [count, setCount] = useState(0);
   const onSubmitAction = (value) => {
     return alert(`Username is : ${value}`);
   };
@@ -13,6 +20,10 @@ const Forms = () => {
     const { value } = event.target;
     setUsername(value.toLowerCase());
   };
+  useEffect(() => {
+    console.log("rendering useEffect...");
+    localStorage.setItem("name", username);
+  },[username]);
   return (
     <React.Fragment>
       <form onSubmit={handleSubmit}>
@@ -26,6 +37,9 @@ const Forms = () => {
         />
         <button type="submit">Submit</button>
       </form>
+      <button onClick={() => setCount((prevCount) => prevCount + 1)}>
+        {count}
+      </button>
     </React.Fragment>
   );
 };
