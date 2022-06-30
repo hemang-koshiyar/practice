@@ -1,18 +1,10 @@
-import { WITHDRAW_AMT, DEPOSIT_AMT } from "../constants";
-export const withDrawAmount = (amount) => {
-  return (dispatch) => {
-    dispatch({
-      type: WITHDRAW_AMT,
-      payload: amount,
-    });
-  };
-};
-export const depositAmount = (amount) => {
-  return (dispatch) => {
-    dispatch({
-      type: DEPOSIT_AMT,
-      payload: amount,
-    });
-  };
-};
-export default {withDrawAmount, depositAmount} 
+import { BUY_CAKE } from "../constants"
+
+export const buyCake = (amount) =>{
+    return (dispatch) =>{
+         return dispatch({
+            type: BUY_CAKE,
+            payload: amount
+        })
+    }
+}
